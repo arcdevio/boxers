@@ -25,16 +25,16 @@ const header = `/*
 (async function() {
 
 	let result;
-	const options = { from: 'src/index.css', to: 'dist/boxers.css' };
+	const options = { from: 'src/boxers.css', to: 'dis/boxers.css' };
 	const data = await ReadFile('src/index.css');
 
 	result = await Postcss([Cssnext]).process(data, options);
 
-	WriteFile('dist/boxers.css', `${header}${result.css}`);
+	WriteFile('dis/boxers.css', `${header}${result.css}`);
 
 	result = await Postcss([Cssnano]).process(result.css, options);
 
-	WriteFile('dist/boxers.min.css', `${header}${result.css}`);
+	WriteFile('dis/boxers.min.css', `${header}${result.css}`);
 
 }()).catch(function (error) {
 	console.error(error);
