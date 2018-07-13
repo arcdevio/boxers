@@ -1,0 +1,375 @@
+/*
+	Name: boxers
+	Version: 1.2.0
+	License: MPL-2.0
+	Author: Arc IO
+	Email: arcdevio@gmail.com
+	This Source Code Form is subject to the terms of the Mozilla Public
+	License, v. 2.0. If a copy of the MPL was not distributed with this
+	file, You can obtain one at http://mozilla.org/MPL/2.0/.
+*/
+:root {
+	--secondary: coral;
+	--primary: steelblue;
+	--background: whitesmoke;
+
+	--error: darkred;
+	--warn: darkorange;
+	--success: darkgreen;
+
+	--dark: black;
+	--muted: grey;
+	--light: white;
+
+	--hover: rgba(0, 0, 0, 0.1);
+	--shadow: rgba(0, 0, 0, 0.1);
+	--action: rgba(0, 0, 0, 0.3);
+
+	--animation-type: ease;
+	--animation-speed: 300ms;
+	--animation: var(--animation-speed) var(--animation-type);
+
+	--animation-background-type: ease;
+	--animation-background-speed: 600ms;
+	--animation-background: var(--animation-background-speed) var(--animation-background-type);
+
+    --o-panel-icon: var(--light);
+	--o-panel-shadow: var(--shadow);
+    --o-panel-transition: var(--animation);
+
+	--o-panel-menu-background: var(--light);
+	--o-panel-tray-background: var(--light);
+
+	--o-panel-bar-color: var(--light);
+	--o-panel-bar-background: var(--primary);
+
+    --o-panel-icon-hover: var(--hover);
+    --o-panel-item-hover: var(--hover);
+
+    --o-panel-icon-active: var(--action);
+    --o-panel-item-active: var(--action);
+
+	--o-toast-color: var(--light);
+	--o-toast-shadow: var(--shadow);
+	--o-toast-widget: var(--primary);
+    --o-toast-transition: var(--animation);
+}
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	color: inherit;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+body {
+	font-size: 1rem;
+	min-height: 100vh;
+	overflow-x: hidden;
+	color: var(--dark);
+	background-color: var(--background);
+	transition: opacity var(--animation-background);
+}
+header {
+	width: 100vw;
+}
+main {
+	width: 90vw;
+    margin: 3vh auto;
+    max-width: 1200px;
+}
+h1 {
+	font-weight: 300;
+	font-size: 2.9rem;
+	letter-spacing: 1px;
+    text-transform: capitalize;
+}
+h2 {
+	font-weight: 300;
+	font-size: 1.9rem;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+}
+h3 {
+	font-weight: 100;
+	font-size: 1.3rem;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+}
+ol {
+	list-style-position: inside;
+}
+ul {
+	list-style-type: none;
+	list-style-position: inside;
+}
+li {
+	margin: 1px;
+	padding: 6px;
+}
+a {
+	text-decoration: none;
+}
+object {
+	pointer-events: none;
+}
+form {
+	margin: 3rem 0 0.3rem 0;
+}
+input {
+	border: none;
+    display: block;
+    margin: 0.3rem;
+    font-size: 1rem;
+	padding: 0.6rem;
+	background: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+	border-bottom: 1px solid var(--muted);
+}
+input:hover {
+	border-bottom-color: var(--dark);
+}
+input:focus, input:active {
+	border-bottom-color: var(--primary);
+}
+input[type="submit"] {
+	display: block;
+	margin: 3rem 0.3rem 0.3rem 0.3rem;
+}
+input ~ label {
+	height: 0;
+    cursor: text;
+    display: block;
+    margin: 0.3rem;
+    padding: 0.6rem;
+    pointer-events: none;
+    color: var(--muted);
+    transform: translateY(-2.9rem);
+    transition: all var(--animation);
+}
+input:hover ~ label {
+    color: var(--dark);
+}
+input:focus ~ label,
+input:valid ~ label,
+input[placeholder]:not(:placeholder-shown) ~ label {
+    font-size: 0.9rem;
+    color: var(--primary);
+    transform: translateY(-4.9rem);
+}
+
+select {
+    height: 0;
+	width: 100%;
+    border: none;
+    margin: 0.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background: none;
+    overflow: hidden;
+	background-color: var(--light);
+	transition: all var(--animation);
+    padding: 1.7rem 0.6rem 0.6rem 0.6rem;
+    border-bottom: 1px solid var(--muted);
+}
+select option {
+    opacity: 0;
+	pointer-events: none;
+}
+select:focus option {
+    opacity: 1;
+	pointer-events: all;
+}
+select:focus {
+    height: auto;
+	padding: 0.6rem;
+    overflow-y: scroll;
+}
+select:hover {
+	border-bottom-color: var(--dark);
+}
+select:focus, select:active {
+    border-bottom-color: var(--primary);
+}
+select ~ label {
+	height: 0;
+    cursor: text;
+    margin: 0.3rem;
+    padding: 0.6rem;
+    position: relative;
+    pointer-events: none;
+    color: var(--muted);
+    transform: translateY(-2.9rem);
+    transition: all var(--animation);
+}
+select ~ label::after {
+    content: '';
+    right: 0.6rem;
+    position: absolute;
+    border-left: 0.3rem solid transparent;
+    border-right: 0.3rem solid transparent;
+    border-top: 0.3rem solid var(--muted);
+}
+select:hover ~ label::after {
+    border-top-color: var(--dark);
+}
+select:hover ~ label{
+    color: var(--dark);
+}
+select:focus ~ label {
+    opacity: 0;
+}
+table {
+    width: 100%;
+    max-width: 100%;
+	border-collapse: collapse;
+	/* border: 1px solid var(--muted); */
+}
+tbody {
+	overflow-y: auto;
+    /* max-height: 600px; */
+}
+thead {
+	border-top: 1px solid var(--muted);
+    border-bottom: 1px solid var(--muted);
+	/* background-color: var(--muted); */
+}
+th {
+	flex: 1;
+	padding: 12px;
+	font-size: 1.1rem;
+	font-weight: bolder;
+	word-wrap: break-word;
+}
+td {
+	flex: 1;
+	padding: 6px;
+	display: flex;
+	align-items: center;
+	word-wrap: break-word;
+	word-break: break-all;
+	justify-content: center;
+}
+tr {
+	display: flex;
+    flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+tr:nth-child(even) {
+	border-top: 1px solid var(--muted);
+	border-bottom: 1px solid var(--muted);
+}
+td:nth-child(even) {
+	border-left: 1px solid var(--muted);
+	border-right: 1px solid var(--muted);
+}
+tr:nth-child(1) {
+	border-top: none;
+}
+tr:nth-last-child(1) {
+	border-bottom: none;
+}
+td:nth-child(1) {
+	border-left: none;
+}
+td:nth-last-child(1) {
+	border-right: none;
+}
+.icon {
+	cursor: pointer;
+}
+.icon.small {
+	width: 1.6rem;
+	height: 1.6rem;
+	margin: 0.1rem;
+}
+.card {
+	margin: 1rem;
+	padding: 1.6rem;
+	text-align: left;
+	border-radius: 3px;
+	background: var(--light);
+}
+.button {
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: 100;
+    border-radius: 3px;
+    margin: 1rem 0.3rem;
+    letter-spacing: 1px;
+	display: inline-block;
+	text-decoration: none;
+	padding: 0.6rem 1.9rem;
+	text-transform: uppercase;
+	border: 1px solid transparent;
+	background-color: transparent;
+	transition: all var(--animation);
+}
+.button.right {
+	float: right;
+	clear: both;
+}
+.button.solid, .button.holo:hover {
+	color: var(--light);
+	background-color: var(--dark);
+}
+.button.solid:hover, .button.holo {
+	color: var(--dark);
+	border-color: var(--dark);
+	background-color: transparent;
+}
+.button.solid.primary, .button.holo.primary:hover {
+	color: var(--light);
+	background-color: var(--primary);
+}
+.button.solid.primary:hover, .button.holo.primary {
+	color: var(--primary);
+	border-color: var(--primary);
+	background-color: transparent;
+}
+.button.solid.secondary, .button.holo.secondary:hover {
+	color: var(--light);
+	background-color: var(--secondary);
+}
+.button.solid.secondary:hover, .button.holo.secondary {
+	color: var(--secondary);
+	border-color: var(--secondary);
+	background-color: transparent;
+}
+.button.solid.warn, .button.holo.warn:hover {
+	color: var(--light);
+	background-color: var(--warn);
+}
+.button.solid.warn:hover, .button.holo.warn {
+	color: var(--warn);
+	border-color: var(--warn);
+	background-color: transparent;
+}
+.button.solid.success, .button.holo.success:hover {
+	color: var(--light);
+	background-color: var(--success);
+}
+.button.solid.success:hover, .button.holo.success {
+	color: var(--success);
+	border-color: var(--success);
+	background-color: transparent;
+}
+.button.solid.error, .button.holo.error:hover {
+	color: var(--light);
+	background-color: var(--error);
+}
+.button.solid.error:hover, .button.holo.error {
+	color: var(--error);
+	border-color: var(--error);
+	background-color: transparent;
+}
+.button.solid.secondary:active,
+.button.holo.secondary:active {
+    filter: brightness(60%);
+}
+.button.solid.primary:active,
+.button.holo.primary:active {
+    filter: brightness(60%);
+}
