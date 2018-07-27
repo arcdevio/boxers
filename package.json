@@ -1,6 +1,6 @@
 {
 	"name": "boxers",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "Boxers a css grid library",
 	"main": "dis/boxers.min.css",
 	"scripts": {

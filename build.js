@@ -33,22 +33,22 @@ const build = async function (name, next) {
 	if (next) {
 		result = await Postcss([Cssnext]).process(data, {
 			from: 'src/' + name + '.css',
-			to: 'dis/' + name + '.css'
+			to: 'dst/' + name + '.css'
 		});
 	} else {
 		result = {};
 		result.css = data;
 	}
 
-	WriteFile('dis/' + name + '.css', `${header}${result.css}`);
+	WriteFile('dst/' + name + '.css', `${header}${result.css}`);
 
 	// minified
 	result = await Postcss([Cssnano]).process(result.css, {
 		from: 'src/' + name  + '.css',
-		to: 'dis/'  + name + '.min.css'
+		to: 'dst/'  + name + '.min.css'
 	});
 
-	WriteFile('dis/' + name + '.min.css', `${header}${result.css}`);
+	WriteFile('dst/' + name + '.min.css', `${header}${result.css}`);
 
 };
 
