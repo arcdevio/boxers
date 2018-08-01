@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Boxers</title>
+	<link rel="stylesheet" href="../src/boxers-grid.css">
+</head>
+<body>
+
+	<style>
+		.parent {
+			margin: 6px;
+			width: 300px;
+			height: 150px;
+			background-color: lightgray;
+		}
+		.child {
+			margin: 1px;
+			width: 30px;
+			height: 30px;
+			border: 1px dashed black;
+			background-color: darkgray;
+		}
+	</style>
+
+	<br>
+	<br>
+
+	<h1>X Direction</h1>
+	<button>x-positive</button>
+	<button>x-negative</button>
+
+	<h1>Y Direction</h1>
+	<button>y-positive</button>
+	<button>y-negative</button>
+
+	<h1>Y</h1>
+	<button>y-end</button>
+	<button>y-start</button>
+	<button>y-center</button>
+
+	<h1>X</h1>
+	<button>x-end</button>
+	<button>x-start</button>
+	<button>x-center</button>
+
+	<br>
+	<hr>
+	<br>
+
+	<div class="result"></div>
+
+	<div class="parent">
+		<div class="child">1</div>
+		<div class="child">2</div>
+		<div class="child">3</div>
+	</div>
+
+	<script>
+		const result = document.querySelector('.result');
+		const parent = document.querySelector('.parent');
+		const children = document.querySelectorAll('.child');
+		const buttons = document.querySelectorAll('button');
+
+		for (let button of buttons) {
+			button.addEventListener('click', function () {
+
+				if (this.innerText.includes('positive') || this.innerText.includes('negative')) {
+					parent.classList.remove('x-positive');
+					parent.classList.remove('x-negative');
+					parent.classList.remove('y-positive');
+					parent.classList.remove('y-negative');
+				}
+
+				parent.classList.toggle(this.innerText);
+				result.innerText = parent.className;
+			});
+		}
+
+	</script>
+
+</body>
+</html>

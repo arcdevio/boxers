@@ -1,0 +1,66 @@
+/*
+
+
+*/
+.x-positive, .x-negative, .x-end, .x-start, .x-center,
+.y-positive, .y-negative, .y-end, .y-start, .y-center
+{
+	display: flex;
+	box-sizing: border-box;
+}
+
+.x-positive {
+	flex-direction: row;
+}
+.x-negative {
+	flex-direction: row-reverse;
+}
+.y-positive {
+	flex-direction: column;
+}
+.y-negative {
+	flex-direction: column-reverse;
+}
+
+.x-end {
+	justify-items: flex-end;
+	justify-content: flex-end;
+}
+.x-start {
+	justify-items: flex-start;
+	justify-content: flex-start;
+}
+.x-center {
+	justify-items: center;
+	justify-content: center;
+}
+
+.y-end {
+	align-items: flex-end;
+	align-content: flex-end;
+}
+.y-start {
+	align-items: flex-start;
+	align-content: flex-start;
+}
+.y-center {
+	align-items: center;
+	align-content: center;
+}
+
+.first {
+	order: -1;
+}
+.last {
+	order: 1;
+}
+
+.wrap {
+	flex-flow: wrap;
+}
+.grow {
+	flex: 1 0 auto;
+}
+.shrink {
+	flex: 0 1 auto;
+}
