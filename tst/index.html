@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Boxers</title>
-	<link rel="stylesheet" href="../src/boxers-grid.css">
+	<link rel="stylesheet" href="./boxers-grid.css">
 </head>
 <body>
 
@@ -11,12 +11,13 @@
 			margin: 6px;
 			width: 300px;
 			height: 150px;
+		    border: 1px dashed red;
 			background-color: lightgray;
 		}
 		.child {
 			margin: 1px;
-			width: 30px;
-			height: 30px;
+			min-width: 60px;
+			min-height: 60px;
 			border: 1px dashed black;
 			background-color: darkgray;
 		}
@@ -25,13 +26,9 @@
 	<br>
 	<br>
 
-	<h1>X Direction</h1>
-	<button>x-positive</button>
-	<button>x-negative</button>
-
-	<h1>Y Direction</h1>
-	<button>y-positive</button>
-	<button>y-negative</button>
+	<h1>Direction</h1>
+	<button>x-direction</button>
+	<button>y-direction</button>
 
 	<h1>Y</h1>
 	<button>y-end</button>
@@ -43,6 +40,16 @@
 	<button>x-start</button>
 	<button>x-center</button>
 
+	<h1>Others</h1>
+	<button>first</button>
+	<button>last</button>
+	<button>wrap</button>
+	<button>grow</button>
+	<button>shrink</button>
+	<button>reverse</button>
+	<button>around</button>
+	<button>between</button>
+
 	<br>
 	<hr>
 	<br>
@@ -53,6 +60,9 @@
 		<div class="child">1</div>
 		<div class="child">2</div>
 		<div class="child">3</div>
+		<div class="child">4</div>
+		<div class="child">5</div>
+		<div class="child">6</div>
 	</div>
 
 	<script>

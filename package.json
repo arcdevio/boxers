@@ -4,7 +4,9 @@
 	"description": "Boxers a css grid library",
 	"main": "dis/boxers.min.css",
 	"scripts": {
-		"b": "node build.js"
+		"b": "node build.js",
+        "t": "muleify -s tst",
+        "w": "muleify -pw src tst"
 	},
 	"repository": {
 		"type": "git",

@@ -2,13 +2,12 @@
 Boxers a css grid library.
 
 ## API
-- row
-- column
-- start
-- end
-- center
+- x-direction
+- y-direction
+- x-start, y-start
+- x-end, y-start
+- x-center, y-start
 - between
 - around
-- middle
 - wrap
 - fill
