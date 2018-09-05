@@ -1,12 +1,12 @@
 {
 	"name": "boxers",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "Boxers a css grid library",
 	"main": "dis/boxers.min.css",
 	"scripts": {
 		"b": "node build.js",
-        "t": "muleify -s tst",
-        "w": "muleify -pw src tst"
+		"t": "muleify -s tst",
+		"w": "muleify -pw src tst"
 	},
 	"repository": {
 		"type": "git",
@@ -30,8 +30,10 @@
 	},
 	"homepage": "https://github.com/AlexanderElias/boxers#readme",
 	"devDependencies": {
-		"cssnano": "^3.10.0",
-		"postcss": "^6.0.23",
+		"cssnano": "^4.1.0",
 		"postcss-cssnext": "^3.1.0"
+	},
+	"dependencies": {
+		"postcss": "^7.0.2"
 	}
 }
