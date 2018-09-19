@@ -1,6 +1,6 @@
 /*
 	Name: boxers
-	Version: 1.2.2
+	Version: 1.2.3
 	License: MPL-2.0
 	Author: Arc IO
 	Email: arcdevio@gmail.com
@@ -135,7 +135,6 @@ input:focus, input:active {
 }
 input[type="submit"] {
 	display: block;
-	margin: 3rem 0.3rem 0.3rem 0.3rem;
 }
 input ~ label {
 	height: 0;

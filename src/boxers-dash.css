@@ -125,7 +125,6 @@ input:focus, input:active {
 }
 input[type="submit"] {
 	display: block;
-	margin: 3rem 0.3rem 0.3rem 0.3rem;
 }
 input ~ label {
 	height: 0;
