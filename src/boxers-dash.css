@@ -126,14 +126,18 @@ input:focus, input:active {
 input[type="submit"] {
 	display: block;
 }
+input[type="date"] ~ label {
+	font-size: 0.9rem;
+	transform: translateY(-4.9rem);
+}
 input ~ label {
 	height: 0;
     cursor: text;
     display: block;
     margin: 0.3rem;
     padding: 0.6rem;
-    pointer-events: none;
     color: var(--muted);
+    pointer-events: none;
     transform: translateY(-2.9rem);
     transition: all var(--animation);
 }
