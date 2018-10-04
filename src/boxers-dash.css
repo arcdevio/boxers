@@ -117,101 +117,58 @@ input {
     border-top-right-radius: 3px;
 	border-bottom: 1px solid var(--muted);
 }
-input:hover {
-	border-bottom-color: var(--dark);
-}
-input:focus, input:active {
-	border-bottom-color: var(--primary);
-}
-input[type="submit"] {
-	display: block;
-}
-input[type="date"] ~ label {
-	font-size: 0.9rem;
-	transform: translateY(-4.9rem);
-}
-input ~ label {
-	height: 0;
-    cursor: text;
-    display: block;
-    margin: 0.3rem;
-    padding: 0.6rem;
-    color: var(--muted);
-    pointer-events: none;
-    transform: translateY(-2.9rem);
-    transition: all var(--animation);
-}
-input:hover ~ label {
-    color: var(--dark);
-}
-input:focus ~ label,
-input:valid ~ label,
-input[placeholder]:not(:placeholder-shown) ~ label {
-    font-size: 0.9rem;
-    color: var(--primary);
-    transform: translateY(-4.9rem);
-}
-
 select {
-    height: 0;
 	width: 100%;
     border: none;
     margin: 0.3rem;
+    padding: 0.6rem;
     font-size: 1rem;
     cursor: pointer;
     background: none;
     overflow: hidden;
 	background-color: var(--light);
 	transition: all var(--animation);
-    padding: 1.7rem 0.6rem 0.6rem 0.6rem;
     border-bottom: 1px solid var(--muted);
 }
-select option {
-    opacity: 0;
-	pointer-events: none;
-}
-select:focus option {
-    opacity: 1;
-	pointer-events: all;
-}
-select:focus {
-    height: auto;
-	padding: 0.6rem;
-    overflow-y: scroll;
-}
-select:hover {
+input:hover, select:hover {
 	border-bottom-color: var(--dark);
 }
+input:focus, input:active,
 select:focus, select:active {
-    border-bottom-color: var(--primary);
+	border-bottom-color: var(--primary);
 }
-select ~ label {
+input[type="submit"] {
+	display: block;
+}
+select ~ label,
+input[type="date"] ~ label {
+	font-size: 0.9rem;
+    color: var(--primary);
+	transform: translateY(-5.3rem);
+}
+input ~ label, select ~ label {
 	height: 0;
     cursor: text;
-    margin: 0.3rem;
-    padding: 0.6rem;
-    position: relative;
-    pointer-events: none;
+    display: block;
+	font-size: 1rem;
+	margin-left: 0.9rem;
+	padding-top: 1.6rem;
     color: var(--muted);
-    transform: translateY(-2.9rem);
+    pointer-events: none;
     transition: all var(--animation);
+	transform: translateY(calc(-3.3rem - 7px));
 }
-select ~ label::after {
-    content: '';
-    right: 0.6rem;
-    position: absolute;
-    border-left: 0.3rem solid transparent;
-    border-right: 0.3rem solid transparent;
-    border-top: 0.3rem solid var(--muted);
-}
-select:hover ~ label::after {
-    border-top-color: var(--dark);
-}
-select:hover ~ label{
+input:hover ~ label, select:hover ~ label {
     color: var(--dark);
 }
-select:focus ~ label {
-    opacity: 0;
+select:focus ~ label,
+select:valid ~ label,
+input:focus ~ label,
+input:valid ~ label,
+input[placeholder]:not(:placeholder-shown) ~ label {
+    font-size: 0.9rem;
+    color: var(--primary);
+    transform: translateY(-5.3rem);
 }
 table {
     width: 100%;
