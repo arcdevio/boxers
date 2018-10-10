@@ -6,7 +6,8 @@
 	"scripts": {
 		"b": "node build.js",
 		"t": "muleify -s tst",
-		"w": "muleify -pw src tst"
+		"w": "muleify -pw src tst",
+		"cpd": "cp tst/* docs/."
 	},
 	"repository": {
 		"type": "git",
