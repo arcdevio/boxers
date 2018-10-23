@@ -1,4 +1,5 @@
 :root {
+	--disabled: grey;
 	--secondary: coral;
 	--primary: steelblue;
 	--background: whitesmoke;
@@ -168,6 +169,11 @@ input:valid ~ label,
 input[placeholder]:not(:placeholder-shown) ~ label {
     font-size: 0.9rem;
     color: var(--primary);
+    transform: translateY(-5.3rem);
+}
+input:disabled ~ label {
+	font-size: 0.9rem;
+	color: var(--disabled);
     transform: translateY(-5.3rem);
 }
 table {
