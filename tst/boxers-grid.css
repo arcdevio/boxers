@@ -15,6 +15,7 @@
 	flex-direction: column;
 }
 
+/* default */
 .x-direction.x-end,
 .y-direction.y-end,
 .x-direction.x-start.reverse,
@@ -79,26 +80,6 @@
 	justify-content: center;
 }
 
-.x-direction.grow > *,
-.y-direction.grow > * {
-	flex: 1 0 auto;
-}
-
-.x-direction.shrink > *,
-.y-direction.shrink > * {
-	flex: 0 1 auto;
-}
-
-.x-direction.around,
-.y-direction.around {
-	justify-content: space-around;
-}
-
-.x-direction.between,
-.y-direction.between {
-	justify-content: space-between;
-}
-
 /* other */
 .first {
 	order: -1;
@@ -108,4 +89,10 @@
 }
 .wrap {
 	flex-wrap: wrap;
+}
+.grow {
+	flex: 1 0 auto;
+}
+.shrink {
+	flex: 0 1 auto;
 }

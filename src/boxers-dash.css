@@ -138,9 +138,6 @@ input:focus, input:active,
 select:focus, select:active {
 	border-bottom-color: var(--primary);
 }
-input[type="submit"] {
-	display: block;
-}
 select ~ label,
 input[type="date"] ~ label {
 	font-size: 0.9rem;
@@ -263,8 +260,8 @@ td:nth-last-child(1) {
 	transition: all var(--animation);
 }
 .button.right {
-	float: right;
 	clear: both;
+	float: right;
 }
 .button.solid, .button.holo:hover {
 	color: var(--light);
@@ -327,4 +324,15 @@ td:nth-last-child(1) {
 .button.solid.primary:active,
 .button.holo.primary:active {
     filter: brightness(60%);
+}
+.button.solid:disabled, .button.solid:disabled:hover {
+	cursor: not-allowed;
+	color: var(--light);
+	background-color: var(--disabled);
+}
+.button.holo:disabled, .button.holo:disabled:hover {
+	cursor: not-allowed;
+	color: var(--disabled);
+	border-color: var(--disabled);
+	background-color: transparent;
 }
