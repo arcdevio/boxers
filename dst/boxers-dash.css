@@ -1,6 +1,6 @@
 /*
 	Name: boxers
-	Version: 1.4.1
+	Version: 1.4.2
 	License: MPL-2.0
 	Author: Arc IO
 	Email: arcdevio@gmail.com
@@ -34,7 +34,7 @@
 	--animation-background-speed: 600ms;
 	--animation-background: var(--animation-background-speed) var(--animation-background-type);
 
-    --o-panel-icon: var(--light);
+    --o-panel-icon: var(--dark);
 	--o-panel-shadow: var(--shadow);
     --o-panel-transition: var(--animation);
 

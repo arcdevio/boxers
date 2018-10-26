@@ -24,7 +24,7 @@
 	--animation-background-speed: 600ms;
 	--animation-background: var(--animation-background-speed) var(--animation-background-type);
 
-    --o-panel-icon: var(--light);
+    --o-panel-icon: var(--dark);
 	--o-panel-shadow: var(--shadow);
     --o-panel-transition: var(--animation);
 
