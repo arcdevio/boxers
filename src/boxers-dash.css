@@ -46,9 +46,9 @@
 	--o-toast-widget: var(--primary);
     --o-toast-transition: var(--animation);
 
-	--o-modal-color: var(--light);
+	--o-modal-color: var(--dark);
+	--o-modal-widget: var(--light);
 	--o-modal-shadow: var(--shadow);
-	--o-modal-widget: var(--primary);
 	--o-modal-background: var(--background);
 }
 * {

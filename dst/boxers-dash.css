@@ -1,6 +1,6 @@
 /*
 	Name: boxers
-	Version: 1.5.0
+	Version: 1.5.1
 	License: MPL-2.0
 	Author: Arc IO
 	Email: arcdevio@gmail.com
@@ -56,9 +56,9 @@
 	--o-toast-widget: var(--primary);
     --o-toast-transition: var(--animation);
 
-	--o-modal-color: var(--light);
+	--o-modal-color: var(--dark);
+	--o-modal-widget: var(--light);
 	--o-modal-shadow: var(--shadow);
-	--o-modal-widget: var(--primary);
 	--o-modal-background: var(--background);
 }
 * {
