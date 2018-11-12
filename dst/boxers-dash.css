@@ -1,6 +1,6 @@
 /*
 	Name: boxers
-	Version: 1.4.2
+	Version: 1.5.0
 	License: MPL-2.0
 	Author: Arc IO
 	Email: arcdevio@gmail.com
@@ -25,6 +25,7 @@
 	--hover: rgba(0, 0, 0, 0.1);
 	--shadow: rgba(0, 0, 0, 0.1);
 	--action: rgba(0, 0, 0, 0.3);
+	--background: rgba(0, 0, 0, 0.1);
 
 	--animation-type: ease;
 	--animation-speed: 300ms;
@@ -54,6 +55,11 @@
 	--o-toast-shadow: var(--shadow);
 	--o-toast-widget: var(--primary);
     --o-toast-transition: var(--animation);
+
+	--o-modal-color: var(--light);
+	--o-modal-shadow: var(--shadow);
+	--o-modal-widget: var(--primary);
+	--o-modal-background: var(--background);
 }
 * {
 	margin: 0;
