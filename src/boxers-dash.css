@@ -41,9 +41,11 @@
     --o-panel-icon-active: var(--action);
     --o-panel-item-active: var(--action);
 
+	--o-toast-warn: var(--warn);
 	--o-toast-color: var(--light);
 	--o-toast-shadow: var(--shadow);
 	--o-toast-widget: var(--primary);
+	--o-toast-success: var(--success);
     --o-toast-transition: var(--animation);
 
 	--o-modal-color: var(--dark);
