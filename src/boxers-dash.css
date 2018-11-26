@@ -1,4 +1,7 @@
 :root {
+
+	font-size: 15px;
+
 	--disabled: grey;
 	--secondary: coral;
 	--primary: steelblue;
@@ -59,23 +62,18 @@
 	padding: 0;
 	outline: none;
 	color: inherit;
+	font-size: 1rem;
 	box-sizing: border-box;
 	font-family: sans-serif;
 }
 body {
-	font-size: 1rem;
-	min-height: 100vh;
 	overflow-x: hidden;
 	color: var(--dark);
 	background-color: var(--background);
 	transition: opacity var(--animation-background);
 }
-header {
-	width: 100vw;
-}
 main {
-	width: 90vw;
-    margin: 3vh auto;
+    margin: auto;
     max-width: 1200px;
 }
 h1 {
