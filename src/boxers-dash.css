@@ -114,71 +114,83 @@ object {
 form {
 	margin: 3rem 0 0.3rem 0;
 }
-input {
+textarea {
+	transition: all var(--animation);
+}
+input, select {
+	height: 1.6rem;
 	border: none;
     display: block;
     margin: 0.3rem;
+	padding: 0.3rem;
     font-size: 1rem;
-	padding: 0.6rem;
 	background: none;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+	transition: all var(--animation);
 	border-bottom: 1px solid var(--muted);
 }
 select {
-	width: 100%;
-    border: none;
-    margin: 0.3rem;
-    padding: 0.6rem;
-    font-size: 1rem;
+	/* -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none; */
+	line-height: 1;
     cursor: pointer;
-    background: none;
-    overflow: hidden;
-	background-color: var(--light);
-	transition: all var(--animation);
-    border-bottom: 1px solid var(--muted);
+    /* padding-right: 1em;
+    background: url("data:image/svg+xml,data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath d='M5 8l4 4 4-4z'/%3E%3C/svg%3E") no-repeat 100% 50%; */
 }
-input:hover, select:hover {
+input:hover, select:hover, textarea:hover {
 	border-bottom-color: var(--dark);
 }
 input:focus, input:active,
-select:focus, select:active {
+select:focus, select:active,
+textarea:focus, textarea:active {
 	border-bottom-color: var(--primary);
 }
-select ~ label,
-input[type="date"] ~ label {
+
+select > option:checked + label,
+select > option:checked ~ label,
+select > option[selected] + label,
+select > option[selected] ~ label,
+input[type="date"] + label {
 	font-size: 0.9rem;
-    color: var(--primary);
-	transform: translateY(-5.3rem);
+	transform: translate(0.9rem, calc(-2rem - 0.9rem - 1px));
 }
-input ~ label, select ~ label {
-	height: 0;
+
+input + label,
+select + label,
+textarea + label {
+	height: 1rem;
     cursor: text;
     display: block;
 	font-size: 1rem;
-	margin-left: 0.9rem;
-	padding-top: 1.6rem;
     color: var(--muted);
     pointer-events: none;
     transition: all var(--animation);
-	transform: translateY(calc(-3.3rem - 7px));
+	transform: translate(0.9rem, calc(-1.6rem - 1px));
 }
-input:hover ~ label, select:hover ~ label {
+input:hover + label,
+select:hover + label,
+textarea:hover + label {
     color: var(--dark);
 }
-select:focus ~ label,
-select:valid ~ label,
-input:focus ~ label,
-input:valid ~ label,
-input[placeholder]:not(:placeholder-shown) ~ label {
+input:focus + label,
+input:valid + label,
+select:focus + label,
+select:valid + label,
+textarea:focus + label,
+textarea:valid + label,
+input[placeholder]:not(:placeholder-shown) + label {
     font-size: 0.9rem;
     color: var(--primary);
-    transform: translateY(-5.3rem);
+	transform: translate(0.9rem, calc(-2rem - 0.9rem - 1px));
 }
-input:disabled ~ label {
+input:disabled + label,
+select:disabled + label,
+textarea:disabled + label {
 	font-size: 0.9rem;
 	color: var(--disabled);
-    transform: translateY(-5.3rem);
+	transform: translate(0.9rem, calc(-2rem - 0.9rem - 1px));
 }
 table {
     width: 100%;
@@ -253,6 +265,7 @@ td:nth-last-child(1) {
 	background: var(--light);
 }
 .button {
+	height: initial;
 	cursor: pointer;
 	font-size: 1rem;
     border-radius: 3px;
