@@ -1,6 +1,6 @@
 /*
 	Name: boxers
-	Version: 1.7.0
+	Version: 1.7.1
 	License: MPL-2.0
 	Author: Arc IO
 	Email: arcdevio@gmail.com
@@ -55,6 +55,7 @@
     --o-panel-item-active: var(--action);
 
 	--o-toast-warn: var(--warn);
+	--o-toast-error: var(--error);
 	--o-toast-color: var(--light);
 	--o-toast-shadow: var(--shadow);
 	--o-toast-widget: var(--primary);
