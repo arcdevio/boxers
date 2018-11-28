@@ -1,6 +1,6 @@
 /*
 	Name: boxers
-	Version: 1.7.1
+	Version: 1.8.0
 	License: MPL-2.0
 	Author: Arc IO
 	Email: arcdevio@gmail.com
@@ -29,6 +29,7 @@
 	--shadow: rgba(0, 0, 0, 0.1);
 	--action: rgba(0, 0, 0, 0.3);
 	--background: rgba(0, 0, 0, 0.1);
+	--light-6: rgba(255, 255, 255, 0.6);
 
 	--animation-speed: 300ms;
 	--animation-type: ease-in-out;
@@ -37,6 +38,9 @@
 	--animation-background-speed: 300ms;
 	--animation-background-type: ease-in-out;
 	--animation-background: var(--animation-background-speed) var(--animation-background-type);
+
+    --o-loader-icon-color: var(--dark);
+    --o-loader-background: var(--light-6);
 
     --o-panel-icon: var(--dark);
 	--o-panel-shadow: var(--shadow);
@@ -123,6 +127,7 @@ object {
 	pointer-events: none;
 }
 form {
+	position: relative;
 	margin: 3rem 0 0.3rem 0;
 }
 textarea {
@@ -131,7 +136,7 @@ textarea {
 select {
     cursor: pointer;
 }
-input, select {
+input, select, textarea {
 	border: none;
     display: block;
 	height: 1.9rem;
@@ -139,6 +144,7 @@ input, select {
 	padding: 0.3rem;
     font-size: 1rem;
 	background: none;
+    margin-top: 0.9rem;
 	font-family: inherit;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
