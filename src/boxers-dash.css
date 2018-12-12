@@ -2,9 +2,9 @@
 
 	font-size: 15px;
 
-	--disabled: grey;
 	--secondary: coral;
 	--primary: steelblue;
+	--disabled: darkgrey;
 	--background: whitesmoke;
 
 	--error: darkred;
@@ -126,7 +126,9 @@ textarea {
 select {
     cursor: pointer;
 }
-input, select, textarea {
+input,
+select,
+textarea {
 	border: none;
     display: block;
 	height: 1.9rem;
@@ -141,13 +143,28 @@ input, select, textarea {
 	transition: all var(--animation);
 	border-bottom: 1px solid var(--muted);
 }
-input:hover, select:hover, textarea:hover {
+input:hover,
+select:hover,
+textarea:hover {
 	border-bottom-color: var(--dark);
 }
-input:focus, input:active,
-select:focus, select:active,
-textarea:focus, textarea:active {
+input:focus,
+select:focus,
+textarea:focus,
+input:valid,
+select:valid,
+textarea:valid,
+input[placeholder]:not(:placeholder-shown) {
 	border-bottom-color: var(--primary);
+}
+input:disabled,
+select:disabled,
+textarea:disabled,
+input:disabled:hover,
+select:disabled:hover,
+textarea:disabled:hover {
+	cursor: unset;
+	border-bottom-color: var(--disabled);
 }
 input[type="date"] + label {
 	font-size: 0.9rem;
@@ -171,10 +188,10 @@ textarea:hover + label {
     color: var(--dark);
 }
 input:focus + label,
-input:valid + label,
 select:focus + label,
-select:valid + label,
 textarea:focus + label,
+input:valid + label,
+select:valid + label,
 textarea:valid + label,
 input[placeholder]:not(:placeholder-shown) + label {
     font-size: 0.9rem;
@@ -183,7 +200,10 @@ input[placeholder]:not(:placeholder-shown) + label {
 }
 input:disabled + label,
 select:disabled + label,
-textarea:disabled + label {
+textarea:disabled + label,
+input:disabled:hover + label,
+select:disabled:hover + label,
+textarea:disabled:hover + label {
 	font-size: 0.9rem;
 	color: var(--disabled);
 	transform: translate(0.9rem, calc(-2rem - 0.9rem - 1px));
