@@ -1,25 +1,26 @@
 :root {
 
 	font-size: 15px;
-
-	--secondary: coral;
-	--primary: steelblue;
 	--disabled: darkgrey;
 	--background: whitesmoke;
 
-	--error: darkred;
-	--warn: darkorange;
-	--success: darkgreen;
+	--warn: 255, 130, 0;
+	--success: 0, 130, 0;
+	--error: 130, 0, 0;
 
-	--dark: black;
-	--muted: grey;
-	--light: white;
+	--light: 255, 255, 255;
+	--muted: 130, 130, 130;
+	--dark: 30, 30, 30;
+	--primary: 0, 130, 255;
+	--secondary: 255, 130, 130;
 
-	--hover: rgba(0, 0, 0, 0.1);
+	--hover: 0.8;
+	--hover-smoke: 0.6;
+	--smoke: 0.1;
+
 	--shadow: rgba(0, 0, 0, 0.1);
 	--action: rgba(0, 0, 0, 0.3);
 	--background: rgba(0, 0, 0, 0.1);
-	--light-6: rgba(255, 255, 255, 0.6);
 
 	--animation-speed: 300ms;
 	--animation-type: ease-in-out;
@@ -29,35 +30,36 @@
 	--animation-background-type: ease-in-out;
 	--animation-background: var(--animation-background-speed) var(--animation-background-type);
 
-    --o-loader-icon-color: var(--dark);
-    --o-loader-background: var(--light-6);
+    --o-loader-icon-color: rgb(var(--dark));
+    --o-loader-background: rgba(var(--light), var(--hover-smoke));
 
-    --o-panel-icon: var(--dark);
+    --o-panel-menu-icon: rgb(var(--primary));
+	--o-panel-bar-icon: rgb(var(--light));
 	--o-panel-shadow: var(--shadow);
     --o-panel-transition: var(--animation);
 
-	--o-panel-menu-background: var(--light);
-	--o-panel-tray-background: var(--light);
+	--o-panel-menu-background: rgb(var(--light));
+	--o-panel-tray-background: rgb(var(--light));
 
-	--o-panel-bar-color: var(--light);
-	--o-panel-bar-background: var(--primary);
+	--o-panel-bar-color: rgb(var(--light));
+	--o-panel-bar-background: rgb(var(--primary));
 
-    --o-panel-icon-hover: var(--hover);
-    --o-panel-item-hover: var(--hover);
+    --o-panel-icon-hover: var(--shadow);
+    --o-panel-item-hover: var(--shadow);
 
     --o-panel-icon-active: var(--action);
     --o-panel-item-active: var(--action);
 
-	--o-toast-warn: var(--warn);
-	--o-toast-error: var(--error);
-	--o-toast-color: var(--light);
+	--o-toast-warn: rgb(var(--warn));
+	--o-toast-error: rgb(var(--error));
+	--o-toast-color: rgb(var(--light));
 	--o-toast-shadow: var(--shadow);
-	--o-toast-widget: var(--primary);
-	--o-toast-success: var(--success);
+	--o-toast-widget: rgb(var(--primary));
+	--o-toast-success: rgb(var(--success));
     --o-toast-transition: var(--animation);
 
-	--o-modal-color: var(--dark);
-	--o-modal-widget: var(--light);
+	--o-modal-color: rgb(var(--dark));
+	--o-modal-widget: rgb(var(--light));
 	--o-modal-shadow: var(--shadow);
     --o-modal-transition: var(--animation);
 	--o-modal-background: var(--background);
@@ -73,7 +75,7 @@
 }
 body {
 	overflow-x: hidden;
-	color: var(--dark);
+	color: rgba(var(--dark), 1);
 	background-color: var(--background);
 	transition: opacity var(--animation-background);
 }
@@ -141,12 +143,12 @@ textarea {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 	transition: all var(--animation);
-	border-bottom: 1px solid var(--muted);
+	border-bottom: 1px solid rgba(var(--muted), 1);
 }
 input:hover,
 select:hover,
 textarea:hover {
-	border-bottom-color: var(--dark);
+	border-bottom-color: rgba(var(--dark), 1);
 }
 input:focus,
 select:focus,
@@ -155,7 +157,7 @@ input:valid,
 select:valid,
 textarea:valid,
 input[placeholder]:not(:placeholder-shown) {
-	border-bottom-color: var(--primary);
+	border-bottom-color: rgba(var(--primary), 1);
 }
 input:disabled,
 select:disabled,
@@ -177,7 +179,7 @@ textarea + label {
     cursor: text;
     display: block;
 	font-size: 1rem;
-    color: var(--muted);
+    color: rgba(var(--muted), 1);
     pointer-events: none;
     transition: all var(--animation);
 	transform: translate(0.9rem, calc(-1.6rem - 1px));
@@ -185,7 +187,7 @@ textarea + label {
 input:hover + label,
 select:hover + label,
 textarea:hover + label {
-    color: var(--dark);
+    color: rgba(var(--dark), 1);
 }
 input:focus + label,
 select:focus + label,
@@ -195,7 +197,7 @@ select:valid + label,
 textarea:valid + label,
 input[placeholder]:not(:placeholder-shown) + label {
     font-size: 0.9rem;
-    color: var(--primary);
+    color: rgba(var(--primary), 1);
 	transform: translate(0.9rem, calc(-2rem - 0.9rem - 1px));
 }
 input:disabled + label,
@@ -212,16 +214,16 @@ table {
     width: 100%;
     max-width: 100%;
 	border-collapse: collapse;
-	/* border: 1px solid var(--muted); */
+	/* border: 1px solid rgba(var(--muted), 1); */
 }
 tbody {
 	overflow-y: auto;
     /* max-height: 600px; */
 }
 thead {
-	border-top: 1px solid var(--muted);
-    border-bottom: 1px solid var(--muted);
-	/* background-color: var(--muted); */
+	border-top: 1px solid rgba(var(--muted), 1);
+    border-bottom: 1px solid rgba(var(--muted), 1);
+	/* background-color: rgba(var(--muted), 1); */
 }
 th {
 	flex: 1;
@@ -246,12 +248,12 @@ tr {
 	justify-content: center;
 }
 tr:nth-child(even) {
-	border-top: 1px solid var(--muted);
-	border-bottom: 1px solid var(--muted);
+	border-top: 1px solid rgba(var(--muted), 1);
+	border-bottom: 1px solid rgba(var(--muted), 1);
 }
 td:nth-child(even) {
-	border-left: 1px solid var(--muted);
-	border-right: 1px solid var(--muted);
+	border-left: 1px solid rgba(var(--muted), 1);
+	border-right: 1px solid rgba(var(--muted), 1);
 }
 tr:nth-child(1) {
 	border-top: none;
@@ -278,7 +280,7 @@ td:nth-last-child(1) {
 	padding: 1.6rem;
 	text-align: left;
 	border-radius: 3px;
-	background: var(--light);
+	background: rgba(var(--light), 1);
 }
 .button {
 	height: initial;
@@ -299,76 +301,88 @@ td:nth-last-child(1) {
 	clear: both;
 	float: right;
 }
-.button.solid, .button.holo:hover {
-	color: var(--light);
-	background-color: var(--dark);
+.button.smoke {
+	color: rgba(var(--dark), 1);
+	background-color: var(--shadow);
 }
-.button.solid:hover, .button.holo {
-	color: var(--dark);
-	border-color: var(--dark);
-	background-color: transparent;
+.button.solid {
+	color: rgba(var(--light), 1);
+	background-color: rgba(var(--dark), 1);
 }
-.button.solid.primary, .button.holo.primary:hover {
-	color: var(--light);
-	background-color: var(--primary);
+.button.solid.primary {
+	color: rgba(var(--light), 1);
+	background-color: rgba(var(--primary), 1);
 }
-.button.solid.primary:hover, .button.holo.primary {
-	color: var(--primary);
-	border-color: var(--primary);
-	background-color: transparent;
+.button.smoke.primary {
+	color: rgba(var(--primary), 1);
+	background-color: rgba(var(--primary), var(--smoke));
 }
-.button.solid.secondary, .button.holo.secondary:hover {
-	color: var(--light);
-	background-color: var(--secondary);
+.button.solid.secondary {
+	color: rgba(var(--light), 1);
+	background-color: rgba(var(--secondary), 1);
 }
-.button.solid.secondary:hover, .button.holo.secondary {
-	color: var(--secondary);
-	border-color: var(--secondary);
-	background-color: transparent;
+.button.smoke.secondary {
+	color: rgba(var(--secondary), 1);
+	background-color: rgba(var(--secondary), var(--smoke));
 }
-.button.solid.warn, .button.holo.warn:hover {
-	color: var(--light);
-	background-color: var(--warn);
+.button.solid.warn {
+	color: rgba(var(--light), 1);
+	background-color: rgb(var(--warn), 1);
 }
-.button.solid.warn:hover, .button.holo.warn {
-	color: var(--warn);
-	border-color: var(--warn);
-	background-color: transparent;
+.button.smoke.warn {
+	color: rgba(var(--warn), 1);
+	background-color: rgba(var(--warn), var(--smoke));
 }
-.button.solid.success, .button.holo.success:hover {
-	color: var(--light);
-	background-color: var(--success);
+.button.solid.success {
+	color: rgba(var(--light), 1);
+	background-color: rgba(var(--success), 1);
 }
-.button.solid.success:hover, .button.holo.success {
-	color: var(--success);
-	border-color: var(--success);
-	background-color: transparent;
+.button.smoke.success {
+	color: rgba(var(--success), 1);
+	background-color: rgba(var(--success), var(--smoke));
 }
-.button.solid.error, .button.holo.error:hover {
-	color: var(--light);
-	background-color: var(--error);
+.button.solid.error {
+	color: rgba(var(--light), 1);
+	background-color: rgba(var(--error), 1);
 }
-.button.solid.error:hover, .button.holo.error {
-	color: var(--error);
-	border-color: var(--error);
-	background-color: transparent;
+.button.smoke.error {
+	color: rgba(var(--error), 1);
+	background-color: rgba(var(--error), var(--smoke));
 }
-.button.solid.secondary:active,
-.button.holo.secondary:active {
-    filter: brightness(60%);
+.button.solid:hover,
+.button.smoke:hover,
+.button.solid.primary:hover,
+.button.smoke.primary:hover,
+.button.solid.secondary:hover,
+.button.smoke.secondary:hover,
+.button.solid.warn:hover,
+.button.smoke.warn:hover,
+.button.solid.success:hover,
+.button.smoke.success:hover,
+.button.solid.error:hover,
+.button.smoke.error:hover {
+	opacity: var(--hover);
+	border-color: transparent;
 }
+
+.button.solid:active,
+.button.smoke:active,
 .button.solid.primary:active,
-.button.holo.primary:active {
+.button.smoke.primary:active,
+.button.solid.secondary:active,
+.button.smoke.secondary:active,
+.button.solid.warn:active,
+.button.smoke.warn:active,
+.button.solid.success:active,
+.button.smoke.success:active,
+.button.solid.error:active,
+.button.smoke.error:active {
     filter: brightness(60%);
 }
-.button.solid:disabled, .button.solid:disabled:hover {
+.button.solid:disabled,
+.button.solid:disabled:hover,
+.button.smoke:disabled,
+.button.smoke:disabled:hover {
 	cursor: not-allowed;
-	color: var(--light);
-	background-color: var(--disabled);
-}
-.button.holo:disabled, .button.holo:disabled:hover {
-	cursor: not-allowed;
-	color: var(--disabled);
-	border-color: var(--disabled);
-	background-color: transparent;
+	filter: grayscale(80%);
 }

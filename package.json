@@ -5,7 +5,7 @@
 	"main": "dis/boxers.min.css",
 	"scripts": {
 		"b": "node build.js",
-		"t": "muleify -s tst",
+		"t": "muleify -sw tst",
 		"w": "muleify -pw src tst",
 		"cpd": "cp tst/* docs/."
 	},
