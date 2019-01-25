@@ -1,6 +1,6 @@
 /*
 	Name: boxers
-	Version: 1.8.1
+	Version: 2.0.0
 	License: MPL-2.0
 	Author: Arc IO
 	Email: arcdevio@gmail.com
@@ -11,7 +11,7 @@
 :root {
 
 	font-size: 15px;
-	
+
 	--disabled: darkgrey;
 	--background: whitesmoke;
 
