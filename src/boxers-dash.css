@@ -171,9 +171,9 @@ textarea:focus:valid {
 	border-bottom-color: rgb(var(--success));
 }
 */
-input:focus:invalid:not([required]),
-select:focus:invalid:not([required]),
-textarea:focus:invalid:not([required]) {
+input:focus:invalid,
+select:focus:invalid,
+textarea:focus:invalid {
 	border-bottom-color: rgb(var(--warn));
 }
 input + label {
@@ -211,9 +211,9 @@ textarea:focus:valid + label {
     color: rgb(var(--success));
 }
 */
-input:focus:invalid:not([required]) + label,
-select:focus:invalid:not([required]) + label,
-textarea:focus:invalid:not([required]) + label {
+input:focus:invalid + label,
+select:focus:invalid + label,
+textarea:focus:invalid + label {
     color: rgb(var(--warn));
 }
 table {
