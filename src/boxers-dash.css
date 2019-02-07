@@ -183,6 +183,7 @@ textarea:focus:invalid {
 label {
     display: block;
 	font-size: 0.9rem;
+	margin-top: 0.6rem;
 	margin-left: 0.6rem;
     color: rgba(var(--muted), 1);
 	transition: color var(--animation-background);
@@ -192,6 +193,7 @@ select + label,
 textarea + label {
 	height: 0;
     cursor: text;
+	margin-top: 0;
 	margin-left: 0;
     pointer-events: none;
 	transform: translate(0.6rem, -3.6rem);
