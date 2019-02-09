@@ -21,7 +21,7 @@
 
 	--shadow: rgba(0, 0, 0, 0.1);
 	--action: rgba(0, 0, 0, 0.3);
-	--background: rgba(0, 0, 0, 0.1);
+	--background: rgba(255, 255, 255, 1);
 
 	--animation-speed: 300ms;
 	--animation-type: ease-in-out;
@@ -34,7 +34,7 @@
     --o-loader-icon-color: rgb(var(--dark));
     --o-loader-background: rgba(var(--light), var(--hover-smoke));
 
-    --o-panel-menu-icon: rgb(var(--primary));
+    --o-panel-menu-icon: rgb(var(--light));
 	--o-panel-bar-icon: rgb(var(--light));
 	--o-panel-shadow: var(--shadow);
     --o-panel-transition: var(--animation);
@@ -43,7 +43,7 @@
 	--o-panel-tray-background: rgb(var(--light));
 
 	--o-panel-bar-color: rgb(var(--light));
-	--o-panel-bar-background: rgb(var(--primary));
+	--o-panel-bar-background: rgb(var(--dark));
 
     --o-panel-icon-hover: var(--shadow);
     --o-panel-item-hover: var(--shadow);
@@ -295,9 +295,9 @@ td:nth-last-child(1) {
 }
 .card {
 	margin: 1rem;
-	padding: 1.6rem;
+	padding: 1.5rem;
 	text-align: left;
-	border-radius: 3px;
+	border-radius: 2px;
 	background: rgba(var(--light), 1);
 }
 .button:focus,
@@ -308,6 +308,7 @@ td:nth-last-child(1) {
 	border: none;
 }
 .button {
+	border: none;
 	height: initial;
 	cursor: pointer;
 	font-size: 1rem;
@@ -374,39 +375,14 @@ td:nth-last-child(1) {
 	color: rgba(var(--error), 1);
 	background-color: rgba(var(--error), var(--smoke));
 }
-.button.solid:hover,
-.button.smoke:hover,
-.button.solid.primary:hover,
-.button.smoke.primary:hover,
-.button.solid.secondary:hover,
-.button.smoke.secondary:hover,
-.button.solid.warn:hover,
-.button.smoke.warn:hover,
-.button.solid.success:hover,
-.button.smoke.success:hover,
-.button.solid.error:hover,
-.button.smoke.error:hover {
+.button:hover {
 	opacity: var(--hover);
-	border-color: transparent;
 }
-.button.solid:active,
-.button.smoke:active,
-.button.solid.primary:active,
-.button.smoke.primary:active,
-.button.solid.secondary:active,
-.button.smoke.secondary:active,
-.button.solid.warn:active,
-.button.smoke.warn:active,
-.button.solid.success:active,
-.button.smoke.success:active,
-.button.solid.error:active,
-.button.smoke.error:active {
+.button:active {
     filter: brightness(60%);
 }
-.button.solid:disabled,
-.button.solid:disabled:hover,
-.button.smoke:disabled,
-.button.smoke:disabled:hover {
+.button:disabled,
+.button:disabled:hover {
 	cursor: not-allowed;
 	filter: grayscale(80%);
 }
