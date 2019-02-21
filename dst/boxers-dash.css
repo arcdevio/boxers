@@ -1,6 +1,6 @@
 /*
 	Name: boxers
-	Version: 2.0.6
+	Version: 2.0.7
 	License: MPL-2.0
 	Author: Arc IO
 	Email: arcdevio@gmail.com
@@ -246,7 +246,6 @@ table {
 }
 tbody {
 	overflow-y: auto;
-    /* max-height: 600px; */
 }
 thead {
 	border-top: 1px solid rgba(var(--muted), 1);
@@ -265,8 +264,6 @@ td {
 	padding: 6px;
 	display: flex;
 	align-items: center;
-	word-wrap: break-word;
-	word-break: break-all;
 	justify-content: center;
 }
 tr {
