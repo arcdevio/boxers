@@ -236,7 +236,6 @@ table {
 }
 tbody {
 	overflow-y: auto;
-    /* max-height: 600px; */
 }
 thead {
 	border-top: 1px solid rgba(var(--muted), 1);
@@ -255,8 +254,6 @@ td {
 	padding: 6px;
 	display: flex;
 	align-items: center;
-	word-wrap: break-word;
-	word-break: break-all;
 	justify-content: center;
 }
 tr {
